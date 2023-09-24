@@ -87,6 +87,9 @@ class ChordBook:
 
         if len(self.search_result) == 0:
             print('검색 결과가 없습니다')
+            self.search_keyword = None
+            self.search()
+            self.show_list()
 
     def run(self):
         try:
@@ -95,11 +98,13 @@ class ChordBook:
                     self.search()
                     self.show_list()
 
+                print('-' * 100)
                 user_input = input('>> 선택할 번호를 입력해주세요(help: h): ')
 
                 if user_input == 'q':
                     break
                 elif user_input == 'h':
+                    print('-' * 100)
                     print('>> 종료: q, 리스트 다시보기: l, 재검색: s, 다음/이전 페이지: n/p')
                 elif user_input == 'l':
                     self.show_list()
@@ -129,9 +134,11 @@ class ChordBook:
                         print(result)
                         print('-' * 100)
                     else:
+                        print('-' * 100)
                         print('>> 해당 페이지에 내용이 없습니다.')
                         self.show_list()
                 else:
+                    print('-' * 100)
                     print('>> 올바른 번호를 입력해주세요...')
         finally:
             self.driver.close()
