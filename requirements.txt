@@ -1,0 +1,4 @@
+pyperclip
+selenium
+webdriver-manager
+beautifulsoup4
