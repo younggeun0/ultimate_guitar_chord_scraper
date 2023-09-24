@@ -16,7 +16,7 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-### 3. 사용방법
+### 3. 실행
 
 ```bash
 $ python main.py
